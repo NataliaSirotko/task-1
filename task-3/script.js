@@ -57,7 +57,7 @@ function detectLevel() {
 detectLevel();
 
 function chooseOptExpenses() {
-    for (let i=0; i<3; i++) {
+    for (let i=1; i<4; i++) {
         let q = prompt("Статья необязательных расходов?", '');
     
         if (typeof(q) === 'string' && typeof(q) != null && q != '' && q.length < 50) {
