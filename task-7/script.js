@@ -11,22 +11,20 @@ p.style.fontSize = "50" + 'px';
 p.style.marginTop = '0';
 
 window.addEventListener('DOMContentLoaded', function () {
-    let timerId = window.setInterval(setTimer, 1000);
     // window.timerId = window.setInterval(setTimer, 500);
-});
+    let timerId = window.setInterval(function setTimer() {
+        let date = new Date();
+        p.innerHTML = addZero(date.getHours())+':'+addZero(date.getMinutes())+':'+addZero(date.getSeconds());
+    }, 1000);
 
-function setTimer(){
-    let date = new Date();
-    p.innerHTML = addZero(date.getHours())+':'+addZero(date.getMinutes())+':'+addZero(date.getSeconds());
-}
-
-function addZero(num) {
-    if (num > 0 && num < 10) {
-        return '0' + num;
-    } if (num == 0) {
-        return '00';
-    } 
-    else {
-        return num;
+    function addZero(num) {
+        if (num > 0 && num < 10) {
+            return '0' + num;
+        } if (num == 0) {
+            return '00';
+        } 
+        else {
+            return num;
+        }
     }
-}
+});
